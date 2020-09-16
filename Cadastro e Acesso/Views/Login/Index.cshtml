@@ -1,0 +1,48 @@
+﻿@model Cadastro_e_Acesso.Models.Acesso
+@{
+
+}
+
+
+
+<!DOCTYPE html>
+.container {
+    max-width: 400px;
+    margin:0 auto;
+    border:1px solid #ccc;
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+    {
+
+        <section class="container">
+            <form>
+                <div class="p-1 mb-1 bg-light text-dark">
+                    <div class="" mx-auto" style="width: 600px;">
+                        <div class="col-md-6">
+                            <label for="exampleInputLogin">Login</label>
+                            <input type="text" class="form-control" id="Login" name="Login" aria-describedby="emailHelp">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword">Senha</label>
+                            <input type="password" class="form-control" id="Password" name="Password">
+                        </div>
+
+                        <div class="align-bottom">
+                            <button type="submit" class="btn btn-outline-success mb-2">Confirma</button>
+                            <span style="color:red;font-size:10px">  @ViewData["msgUsuario"]</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    }
+</body>
+</html>
