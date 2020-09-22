@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Cadastro_e_Acesso.Models.Estado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    .table {
+        border-collapse: collapse;
+        text-align: center;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 400px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+        .table thead tr {
+            background-color: forestgreen;
+            color: white;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .table th,
+        .table td {
+            padding: 12px 15px;
+        }
+
+        .table tbody tr {
+            border-bottom: 1px solid forestgreen;
+        }
+
+            .table tbody tr:nth-of-type(even) {
+                background-color: lightgreen;
+            }
+
+            .table tbody tr:last-of-type {
+                border-bottom: 2px solid forestgreen;
+            }
+</style>
+
+<h1><strong>CADASTRO</strong></h1>
+
+<p>
+    <a asp-action="Create">Cadastrar novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeEstado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnidadeFederativa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeEstado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnidadeFederativa)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

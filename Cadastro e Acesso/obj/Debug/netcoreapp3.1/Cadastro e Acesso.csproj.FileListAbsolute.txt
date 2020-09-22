@@ -33,7 +33,6 @@ C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netco
 C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Cadastro e Acesso.pdb
 C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Cadastro e Acesso.genruntimeconfig.cache
 C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Cadastro e Acesso.csproj.CopyComplete
-C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\CadastroeAcesso\Index.cshtml.g.cs
 C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
@@ -169,11 +168,14 @@ C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\bin\Debug\netco
 C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Cadastro e Acesso.csproj.CoreCompileInputs.cache
 C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Cadastro e Acesso.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Cadastroes\Create.cshtml.g.cs
-C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Cadastroes\Delete.cshtml.g.cs
-C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Cadastroes\Details.cshtml.g.cs
-C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Cadastroes\Edit.cshtml.g.cs
-C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Cadastroes\Index.cshtml.g.cs
 C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
-C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\CadastroeAcesso\Tentativa.cshtml.g.cs
-C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Cadastroes\Dropdown.cshtml.g.cs
+C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Create.cshtml.g.cs
+C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Delete.cshtml.g.cs
+C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Details.cshtml.g.cs
+C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Edit.cshtml.g.cs
+C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Index.cshtml.g.cs
+C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Estadoes\Create.cshtml.g.cs
+C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Estadoes\Delete.cshtml.g.cs
+C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Estadoes\Details.cshtml.g.cs
+C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Estadoes\Edit.cshtml.g.cs
+C:\Users\Lúcia\source\repos\Cadastro e Acesso\Cadastro e Acesso\obj\Debug\netcoreapp3.1\Razor\Views\Estadoes\Index.cshtml.g.cs

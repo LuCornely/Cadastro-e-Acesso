@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Cadastro_e_Acesso.Data;
 using Cadastro_e_Acesso.Models;
 
+
 namespace Cadastro_e_Acesso.Controllers
 {
     public class LoginController : Controller
@@ -23,9 +24,9 @@ namespace Cadastro_e_Acesso.Controllers
             }
 
             [HttpPost]
-            public ActionResult Index(Acesso cadastro)
+            public ActionResult Index(Acesso usuario)
             {
-                var user = db.Cadastro.Where(x => x.Login == cadastro.Login && x.Password == cadastro.Password).FirstOrDefault();
+                var user = db.Usuario.Where(x => x.Login == usuario.Login && x.Password == usuario.Password).FirstOrDefault();
 
                 if (user == null)
                 {

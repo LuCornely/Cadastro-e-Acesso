@@ -1,31 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cadastro_e_Acesso.Data;
 using Cadastro_e_Acesso.Models;
+using Cadastro_e_Acesso.ViewModel;
 
 namespace Cadastro_e_Acesso.Controllers
 {
-    public class CadastroesController : Controller
+    public class UsuarioController : Controller
     {
         private readonly CadastroeAcessoContext _context;
 
-        public CadastroesController(CadastroeAcessoContext context)
+        public UsuarioController(CadastroeAcessoContext context)
         {
             _context = context;
         }
 
-        // GET: Cadastroes
+        // GET: Usuario
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Cadastro.ToListAsync());
+            List<Usuario> usuarios = await _context.Usuario.Include(u => u.Estado).ToListAsync();
+            return View(usuarios);
         }
 
-        // GET: Cadastroes/Details/5
+        // GET: Usuario/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,46 +33,42 @@ namespace Cadastro_e_Acesso.Controllers
                 return NotFound();
             }
 
-            var cadastro = await _context.Cadastro
+            var usuario = await _context.Usuario
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cadastro == null)
+            if (usuario == null)
             {
                 return NotFound();
             }
 
+            return View(usuario);
+        }
+
+        // GET: Usuario/Create
+        public IActionResult Create()
+        {
+            var cadastro = new CadastroVM();
+            cadastro.Estados = _context.Estado.ToList();
             return View(cadastro);
         }
 
-        // GET: Cadastroes/Create
-        public IActionResult Create()
-        {
-
-            var list = new List<string>() { "Rio Grande do Sul", "Santa Catarina", "Paraná", "São Paulo", "Rio de Janeiro", "Espírito Santo", "Minas Gerais" };
-            ViewBag.list = list;
-            var lista = new List<string>() { "CEO", "Administrativo", "Recursos Humanos", "Scrum Master", "Product Owner", "Desenvolvedor", "Estagiário" };
-            ViewBag.list1 = lista;
-                return View(); 
-
-
-        }
-
-        // POST: Cadastroes/Create
+        // POST: Usuario/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Email,Login,Password,Estado,Grupo")] Cadastro cadastro)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Email,Login,Password,IdEstado,Estado")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cadastro);
+                _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(cadastro);
+            return View(usuario);
         }
+        
 
-        // GET: Cadastroes/Edit/5
+        // GET: Usuario/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,22 +76,22 @@ namespace Cadastro_e_Acesso.Controllers
                 return NotFound();
             }
 
-            var cadastro = await _context.Cadastro.FindAsync(id);
-            if (cadastro == null)
+            var usuario = await _context.Usuario.FindAsync(id);
+            if (usuario == null)
             {
                 return NotFound();
             }
-            return View(cadastro);
+            return View(usuario);
         }
 
-        // POST: Cadastroes/Edit/5
+        // POST: Usuario/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Email,Login,Password,Estado,Grupo")] Cadastro cadastro)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Email,Login,Password,IdEstado")] Usuario usuario)
         {
-            if (id != cadastro.Id)
+            if (id != usuario.Id)
             {
                 return NotFound();
             }
@@ -104,12 +100,12 @@ namespace Cadastro_e_Acesso.Controllers
             {
                 try
                 {
-                    _context.Update(cadastro);
+                    _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CadastroExists(cadastro.Id))
+                    if (!UsuarioExists(usuario.Id))
                     {
                         return NotFound();
                     }
@@ -120,10 +116,10 @@ namespace Cadastro_e_Acesso.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(cadastro);
+            return View(usuario);
         }
 
-        // GET: Cadastroes/Delete/5
+        // GET: Usuario/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -131,32 +127,30 @@ namespace Cadastro_e_Acesso.Controllers
                 return NotFound();
             }
 
-            var cadastro = await _context.Cadastro
+            var usuario = await _context.Usuario
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cadastro == null)
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(cadastro);
+            return View(usuario);
         }
 
-        // POST: Cadastroes/Delete/5
+        // POST: Usuario/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cadastro = await _context.Cadastro.FindAsync(id);
-            _context.Cadastro.Remove(cadastro);
+            var usuario = await _context.Usuario.FindAsync(id);
+            _context.Usuario.Remove(usuario);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CadastroExists(int id)
+        private bool UsuarioExists(int id)
         {
-            return _context.Cadastro.Any(e => e.Id == id);
+            return _context.Usuario.Any(e => e.Id == id);
         }
-
-       
     }
 }

@@ -4,12 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-
 namespace Cadastro_e_Acesso.Models
 {
-    public class Cadastro
+    public class Usuario
     {
-       [Required]
+        [Required]
         public int Id { get; set; }
         [Required]
         public string Nome { get; set; }
@@ -20,9 +19,7 @@ namespace Cadastro_e_Acesso.Models
         [Required]
         public string Password { get; set; }
         [Required]
-        public string Estado { get; set; }
-        [Required]
-        public string Grupo { get; set; }
+        public Estado Estado { get; set; }
+
     }
 }
-   
