@@ -1,30 +1,14 @@
-﻿@model Cadastro_e_Acesso.Models.Usuario
+﻿@model Cadastro_e_Acesso.Models.Cadastro
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Delete";
 }
-<style>
-    .row {
-        max-width: 100%;
-        margin: auto;
-        padding: 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        background-color: lightgreen;
-    }
 
-    .a {
-        margin: 20px;
-        text-align: center;
-        font-size: 2em;
-    }
-</style>
+<h1>Delete</h1>
 
-<h1><strong>DETALHES</strong></h1>
-
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Usuario</h4>
+    <h4>Cadastro</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -57,9 +41,17 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Estado)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Grupo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Grupo)
+        </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
-    <a asp-action="Index">De volta a lista</a>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
 </div>

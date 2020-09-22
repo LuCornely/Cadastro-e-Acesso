@@ -1,28 +1,12 @@
-﻿@model Cadastro_e_Acesso.Models.Usuario
+﻿@model Cadastro_e_Acesso.Models.Cadastro
 
 @{
     ViewData["Title"] = "Edit";
 }
-<style>
-    .row {
-        max-width: 100%;
-        margin: auto;
-        padding: 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        background-color: lightgreen;
-    }
 
-    .a {
-        margin: 20px;
-        text-align: center;
-        font-size: 2em;
-    }
-</style>
-<h1><strong>EDITAR</strong></h1>
+<h1>Edit</h1>
 
-<h4>Usuario</h4>
+<h4>Cadastro</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -54,14 +38,22 @@
                 <input asp-for="Estado" class="form-control" />
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
-            <div class="form-group a">
-                <input type="submit" value="Salvar" class="btn btn-outline-success mb-2" />
+            <div class="form-group">
+                <label asp-for="Grupo" class="control-label"></label>
+                <input asp-for="Grupo" class="form-control" />
+                <span asp-validation-for="Grupo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">De volta a lista</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

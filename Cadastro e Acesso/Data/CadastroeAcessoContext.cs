@@ -13,7 +13,7 @@ namespace Cadastro_e_Acesso.Data
             : base(options) 
         {
         }
-        public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Estado> Estado { get; set; }
+        public DbSet<Cadastro> Cadastro { get; set; }
+  
     }
 }
